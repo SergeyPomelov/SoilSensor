@@ -5,8 +5,8 @@ void setup() {
   Serial.setTimeout(2000);
   Serial.setDebugOutput(true);
   while (!Serial) { }
-  
-  pinMode(BUILTIN_LED, OUTPUT);
+
+  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(D0, WAKEUP_PULLUP);
 
   connectWiFi();

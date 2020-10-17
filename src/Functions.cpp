@@ -10,12 +10,12 @@ void readSensors() {
 }
 
 void hibernate() {
-  ESP.deepSleep(SLEEP_SEC * 1000000);
+  ESP.deepSleep(SLEEP_SEC * 1000000U);
   // delay(SLEEP_SEC * 1000);
 }
 
 void wait() {
-  delay(SLEEP_SEC * 1000);
+  delay(SLEEP_SEC * 1000U);
 }
 
 void connectWiFi() {
@@ -68,9 +68,8 @@ void sendDataDomoticz() {
   if ((WiFi.status() == WL_CONNECTED)) {
     Serial.println("Domoticz send begin...\n");
 
-    char charBuf[50];
-    String url = "http://" + String(DOMOTICZ_IP) + ":" + DOMOTICZ_PORT + "/json.htm?type=command&param=udevice&idx=199&nvalue=" 
-    + String(moisture) + "&svalue=" + String(moisture) + "&passcode=1lots!APOqs";
+    String url = "http://" + String(DOMOTICZ_IP) + ":" + DOMOTICZ_PORT + 
+    "/json.htm?type=command&param=udevice&idx=199&nvalue=" + String(moisture) + "&svalue=" + String(moisture) + "&passcode=" + DOMOTICZ_SWITCH_PASS;
     http.begin(url);
     http.addHeader("Accept", "*/*");
     http.addHeader("Host", DOMOTICZ_IP);
