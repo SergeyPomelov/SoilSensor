@@ -1,4 +1,4 @@
 #include <Secrets.h>
 
-#define SLEEP_SEC               21600
+#define SLEEP_SEC               3600U
 #define SOIL_PIN                A0

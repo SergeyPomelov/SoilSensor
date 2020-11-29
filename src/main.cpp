@@ -1,4 +1,8 @@
+#include <Constants.h>
 #include <Functions.h>
+
+ADC_MODE(ADC_VCC);
+
 
 void setup() {
   Serial.begin(9600);
@@ -6,12 +10,12 @@ void setup() {
   Serial.setDebugOutput(true);
   while (!Serial) { }
 
+  pinMode(SOIL_PIN, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(D0, WAKEUP_PULLUP);
 
-  connectWiFi();
+  WiFiconnect();
   readSensors();
-  // sendData();
   sendDataDomoticz();
   hibernate();
 }
