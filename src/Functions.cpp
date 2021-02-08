@@ -9,13 +9,12 @@ HTTPClient http;
 WiFiClient wifi;
 
 void readSensors() {
+  digitalWrite(D7, HIGH);
+  delay(300);
   moisture = analogRead(SOIL_PIN);
   Serial.print("Moisture : ");
   Serial.println(moisture);
-
-  vcc = ESP.getVcc();
-  Serial.print("Vcc : ");
-  Serial.println(vcc);
+  digitalWrite(D7, LOW);
 }
 
 void hibernate() {
@@ -52,7 +51,8 @@ boolean WiFiconnect()
 }
 
 void sendDataDomoticz() {
-  if ((wifi.status() == WL_CONNECTED))
+
+  if (WiFiconnect())
   {
     Serial.println("Domoticz send begin...\n");
 
