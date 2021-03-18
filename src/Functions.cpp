@@ -9,16 +9,17 @@ HTTPClient http;
 WiFiClient wifi;
 
 void readSensors() {
-  digitalWrite(D7, HIGH);
+  digitalWrite(SOIL_PWR, HIGH);
   delay(300);
   moisture = analogRead(SOIL_PIN);
   Serial.print("Moisture : ");
   Serial.println(moisture);
-  digitalWrite(D7, LOW);
+  digitalWrite(SOIL_PWR, LOW);
 }
 
 void hibernate() {
-  ESP.deepSleep(SLEEP_SEC * 1000U * 1000U);
+  ESP.deepSleep(SLEEP_SEC * 1000U * 1000U, WAKE_NO_RFCAL);
+  delay(10);
 }
 
 void wait() {
