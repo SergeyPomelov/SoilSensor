@@ -7,7 +7,7 @@ void setup() {
   Serial.setTimeout(2000);
   Serial.setDebugOutput(true);
   Serial.println("setup");
-  while (!Serial) { }
+  while (!Serial) { };
 
   pinMode(SOIL_PIN, INPUT);
   pinMode(LED_BUILTIN, OUTPUT);
@@ -15,12 +15,13 @@ void setup() {
   pinMode(WAKEUP, WAKEUP_PULLUP);
 
   readSensors();
-  // sendDataDomoticz();
+  sendDataDomoticz();
   hibernate();
 }
 
 void loop() {
   Serial.println("loop");
-  //readSensors();
-  //delay(1000);
+  // readSensors();
+  // sendDataDomoticz();
+  // delay(5000);
 }
