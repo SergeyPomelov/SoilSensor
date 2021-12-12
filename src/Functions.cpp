@@ -10,7 +10,7 @@ WiFiClient wifi;
 
 void readSensors() {
   digitalWrite(SOIL_PWR, HIGH);
-  delay(300);
+  delay(1000);
   soilMoisture = analogRead(SOIL_PIN);
   Serial.print("Moisture : ");
   Serial.println(soilMoisture);
