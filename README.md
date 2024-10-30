@@ -3,6 +3,12 @@ WiFi WeMos D1 Based Custom Soil Sensor Firmware.
 
 ![Soil Sensor](https://i.ibb.co/nmzfX2h/Soil.jpg)
 
+![Repository Top Language](https://img.shields.io/github/languages/top/SergeyPomelov/SoilSensor)
+![Languages](https://img.shields.io/github/languages/count/SergeyPomelov/SoilSensor)
+![Github Repository Size](https://img.shields.io/github/repo-size/SergeyPomelov/SoilSensor)
+![Github Open Issues](https://img.shields.io/github/issues/SergeyPomelov/SoilSensor)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 ### Build
 The source code is verified to be compatible with [Platform IO](https://platformio.org/) and [Arduino IDE](https://www.arduino.cc/).
 
@@ -24,9 +30,6 @@ The source code is verified to be compatible with [Platform IO](https://platform
 - Generic 3.3V+ Battery with JST interface.
 - Unparalleled LiPoFE4 or Li-Ion is recommended as the most effective source for most cases.
 - For any additional sensors, just take note that WeMos's the only 1 analog port is busy.
-
-### Wiring without shields
-![Wiring](https://i.ibb.co/MBx5dF0/soil-Sensor-Wiring.jpg)
 
 # License
 MIT License.
